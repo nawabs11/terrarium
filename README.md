@@ -12,6 +12,21 @@ and the observations are published here for the whole community.
 Inspired by [ipsum](https://github.com/stamparm/ipsum).
 
 <!-- STATS:START -->
+
+## Live stats
+
+_Last updated: 2026-10-01 UTC · 2237 unique attacker IPs_
+
+| # | Events | IP | Reverse DNS |
+|---|---|---|---|
+| 1 | 64489 | `109.160.32.110` | - |
+| 2 | 59109 | `109.160.32.105` | - |
+| 3 | 32555 | `109.160.32.67` | - |
+| 4 | 32513 | `109.160.32.115` | - |
+| 5 | 32388 | `109.160.32.178` | - |
+
+_Full ranking: [top-attackers.txt](top-attackers.txt)_
+
 <!-- STATS:END -->
 
 ## Methodology

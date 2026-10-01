@@ -1,0 +1,106 @@
+# terrarium — top-ssh-commands.txt
+# Most-run SSH commands (generic only — nothing identifying the honeypot internals). Columns: runs command.
+# updated: 2026-10-01 (daily)
+# source: https://github.com/nawabs11/terrarium
+# entries: 100
+#
+30132    uname -s -v -n -r -m
+29315    uname -m | awk '{printf $1}'
+27511    nproc
+27501    uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
+26990    lspci | egrep VGA && lspci | grep 3D
+26044    lscpu | egrep "Model name:" | cut -d ' ' -f 14-
+25637    curl ipinfo.io/org
+25588    nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | wc -l | head -c 1
+25200    nvidia-smi -q | grep "Product Name"
+24448    uname -n | awk '{printf $1}'
+24376    lspci | egrep VGA | grep Radeon | wc -l | head -c 1
+24048    uname -r | awk '{printf $1}'
+1298     echo xsec
+792      /bin/./uname -s -v -n -r -m
+775      uptime -p
+759      lspci | grep VGA | cut -f5- -d ' '
+740      lspci | grep VGA -c
+732      nvidia-smi -q | grep "Product Name" | head -n 1 | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}'
+724      lspci | grep "3D controller" | cut -f5- -d ' '
+714      nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | grep . -c
+628      echo 123456 > /tmp/d.log
+519      whoami
+505      pwd
+445      uname -m
+311      uname -a
+301      hostname
+287      history | tail -5
+283      ssh -V
+281      netstat -tulpn | head -10
+279      ls -la /
+278      ps aux | head -10
+277      uptime
+277      mount | head -5
+267      env | head -10
+254      cd ~; chattr -ia .ssh; lockr -ia .ssh
+249      netstat -tulpn 2>/dev/null | grep LISTEN | head -20
+249      ls -la /etc/network/interfaces /etc/sysconfig/network-scripts/ /etc/netplan/ 2>/dev/null | head -5
+242      ip addr show 2>/dev/null | grep -E '^[0-9]+:' | head -5
+242      id
+237      ip route show 2>/dev/null | head -3
+225      cat /etc/passwd 2>/dev/null | head -1
+222      cat /etc/shadow 2>/dev/null | head -1
+215      cat /proc/version 2>/dev/null | head -1
+207      cat /proc/cpuinfo | grep 'model name' | head -1
+206      uname -r
+205      which apt
+203      which yum
+199      which pacman
+196      which zypper
+195      systemctl list-units --type=service --state=running 2>/dev/null | head -10
+191      ping -c 1 8.8.8.8 2>/dev/null | grep '1 packets transmitted'
+190      echo 1234 > /tmp/d.log
+189      time dd if=/dev/zero of=/tmp/test bs=1M count=10 2>&1
+188      rm -f /tmp/test
+186      ss -tuln 2>/dev/null | wc -l
+181      echo 123 > /tmp/d.log
+95       save
+95       echo 12345678 > /tmp/d.log
+75       PING
+75       echo 1 > /tmp/d.log
+63       echo password > /tmp/d.log
+63       echo qwe123!@ > /tmp/d.log
+60       echo SHELL_TEST
+51       echo root > /tmp/d.log
+49       info
+46       id;hostname
+45       INFO
+42       echo 12345 > /tmp/d.log
+40       echo admin123!@ > /tmp/d.log
+39       GET *14
+38       HGETALL *14
+33       Host: 140.245.218.124:6379
+32       flushall
+31       echo test > /tmp/d.log
+30       GET / HTTP/1.1
+30       SLAVEOF NO ONE
+29       echo admin123 > /tmp/d.log
+28       NONEXISTENT
+28       QUIT
+28       echo jack > /tmp/d.log
+28       echo customer > /tmp/d.log
+26       echo gg > /tmp/d.log
+26       echo osmc > /tmp/d.log
+26       echo onkar123 > /tmp/d.log
+25       Accept: */*
+25       Accept-Encoding: gzip
+25       echo Admin@9000 > /tmp/d.log
+25       echo ame > /tmp/d.log
+25       echo gayan123 > /tmp/d.log
+25       echo airflow > /tmp/d.log
+25       echo ali > /tmp/d.log
+24       echo calvin > /tmp/d.log
+24       echo esroot > /tmp/d.log
+24       echo 123456789 > /tmp/d.log
+24       echo dspace > /tmp/d.log
+24       echo hummingbot > /tmp/d.log
+24       echo omm > /tmp/d.log
+24       echo Huawei@123 > /tmp/d.log
+24       echo martin > /tmp/d.log
+24       echo rancher > /tmp/d.log

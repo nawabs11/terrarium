@@ -111,6 +111,16 @@ alert on matches in firewall or IDS logs.
 
 Feeds refresh daily around 07:00 UTC, plus on every new data snapshot.
 
+## AbuseIPDB reporting
+
+New attacker IPs are also reported to [AbuseIPDB](https://www.abuseipdb.com)
+once per day via the bulk-report API, so the observations feed back into the
+shared community blocklist. Each IP is reported exactly once, with categories
+mapped from the observed activity (SSH brute-force → Brute-Force/SSH, web
+probing → Web App Attack, and so on) and a generic description of the
+behavior. Reporting runs inside the daily workflow and never blocks the feed
+update if the API is unreachable.
+
 ## Disclaimer — read this
 
 - These IPs were **observed interacting with a honeypot**. That is evidence of

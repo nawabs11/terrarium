@@ -27,6 +27,12 @@ jobs:
       - name: Render feeds
         run: python scripts/render.py
 
+      - name: Report new attackers to AbuseIPDB
+        continue-on-error: true
+        env:
+          ABUSEIPDB_API_KEY: ${{ secrets.ABUSEIPDB_API_KEY }}
+        run: python scripts/report_abuseipdb.py
+
       - name: Commit and push if changed
         run: |
           git config user.name "nawabs11"

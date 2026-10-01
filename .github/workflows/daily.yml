@@ -29,8 +29,8 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          git config user.name "terrarium-bot"
-          git config user.email "terrarium-bot@users.noreply.github.com"
+          git config user.name "nawabs11"
+          git config user.email "nawabs11@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then
             echo "no changes"

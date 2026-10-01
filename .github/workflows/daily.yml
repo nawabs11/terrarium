@@ -1,0 +1,40 @@
+name: daily-feed
+
+on:
+  push:
+    paths:
+      - "data/snapshot-*.json"
+  schedule:
+    - cron: "0 7 * * *"   # safety net: re-render daily even without a new snapshot
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pillow requests
+
+      - name: Render feeds
+        run: python scripts/render.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "terrarium-bot"
+          git config user.email "terrarium-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "Daily feed update: $(date -u +%Y-%m-%d)"
+            git push
+          fi

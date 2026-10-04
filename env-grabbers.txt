@@ -1,8 +1,8 @@
 # terrarium — env-grabbers.txt
 # IPs that requested /.env or similar secret files.
-# updated: 2026-10-03 (daily)
+# updated: 2026-10-04 (daily)
 # source: https://github.com/nawabs11/terrarium
-# entries: 102
+# entries: 104
 102.220.161.139
 102.220.161.87
 102.220.163.169
@@ -94,8 +94,10 @@
 78.153.140.149
 78.153.140.251
 78.153.140.39
+78.153.140.40
 78.153.140.43
 78.153.140.93
+80.94.92.65
 80.94.95.211
 83.97.23.184
 87.81.224.86

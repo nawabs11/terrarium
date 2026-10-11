@@ -1,35 +1,35 @@
 # terrarium — top-ssh-commands.txt
 # Most-run SSH commands (generic only — nothing identifying the honeypot internals). Columns: runs command.
-# updated: 2026-10-10 (daily)
+# updated: 2026-10-11 (daily)
 # source: https://github.com/nawabs11/terrarium
 # entries: 100
 #
-69778    uname -s -v -n -r -m
-67849    uname -m | awk '{printf $1}'
-64651    uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
-64312    nproc
-62838    lspci | egrep VGA && lspci | grep 3D
-60650    lscpu | egrep "Model name:" | cut -d ' ' -f 14-
-59492    curl ipinfo.io/org
-59072    nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | wc -l | head -c 1
-57987    nvidia-smi -q | grep "Product Name"
-56122    lspci | egrep VGA | grep Radeon | wc -l | head -c 1
-55943    uname -n | awk '{printf $1}'
-54897    uname -r | awk '{printf $1}'
-2195     echo xsec
-1071     /bin/./uname -s -v -n -r -m
-1047     uptime -p
-1025     lspci | grep VGA | cut -f5- -d ' '
-995      lspci | grep VGA -c
-984      nvidia-smi -q | grep "Product Name" | head -n 1 | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}'
-969      lspci | grep "3D controller" | cut -f5- -d ' '
-958      nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | grep . -c
+74109    uname -s -v -n -r -m
+71994    uname -m | awk '{printf $1}'
+68713    uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
+68305    nproc
+66755    lspci | egrep VGA && lspci | grep 3D
+64487    lscpu | egrep "Model name:" | cut -d ' ' -f 14-
+63256    curl ipinfo.io/org
+62765    nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | wc -l | head -c 1
+61618    nvidia-smi -q | grep "Product Name"
+59681    lspci | egrep VGA | grep Radeon | wc -l | head -c 1
+59459    uname -n | awk '{printf $1}'
+58355    uname -r | awk '{printf $1}'
+2615     echo xsec
+1106     /bin/./uname -s -v -n -r -m
+1081     uptime -p
+1059     lspci | grep VGA | cut -f5- -d ' '
+1028     lspci | grep VGA -c
+1015     nvidia-smi -q | grep "Product Name" | head -n 1 | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}'
+1000     lspci | grep "3D controller" | cut -f5- -d ' '
+989      nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | grep . -c
 873      uname -m
-778      echo 123456 > /tmp/d.log
-677      cd ~; chattr -ia .ssh; lockr -ia .ssh
+779      echo 123456 > /tmp/d.log
+714      cd ~; chattr -ia .ssh; lockr -ia .ssh
 530      whoami
 506      pwd
-330      uname -a
+331      uname -a
 302      hostname
 287      history | tail -5
 283      ssh -V
@@ -39,68 +39,68 @@
 277      uptime
 277      mount | head -5
 267      env | head -10
-255      echo 1234 > /tmp/d.log
+256      echo 1234 > /tmp/d.log
 249      netstat -tulpn 2>/dev/null | grep LISTEN | head -20
 249      ls -la /etc/network/interfaces /etc/sysconfig/network-scripts/ /etc/netplan/ 2>/dev/null | head -5
 243      id
 242      ip addr show 2>/dev/null | grep -E '^[0-9]+:' | head -5
 237      ip route show 2>/dev/null | head -3
-230      echo 123 > /tmp/d.log
+234      echo 123 > /tmp/d.log
 225      cat /etc/passwd 2>/dev/null | head -1
 222      cat /etc/shadow 2>/dev/null | head -1
 215      cat /proc/version 2>/dev/null | head -1
+207      save
 207      cat /proc/cpuinfo | grep 'model name' | head -1
 206      uname -r
 205      which apt
 203      which yum
+202      PING
 199      which pacman
-197      save
 196      which zypper
 195      systemctl list-units --type=service --state=running 2>/dev/null | head -10
-191      PING
 191      ping -c 1 8.8.8.8 2>/dev/null | grep '1 packets transmitted'
 189      time dd if=/dev/zero of=/tmp/test bs=1M count=10 2>&1
 188      rm -f /tmp/test
 186      ss -tuln 2>/dev/null | wc -l
-131      echo 12345678 > /tmp/d.log
-129      info
-106      echo 1 > /tmp/d.log
-104      INFO
-101      Host: 140.245.218.124:6379
-91       echo password > /tmp/d.log
-89       echo root > /tmp/d.log
-84       echo qwe123!@ > /tmp/d.log
+135      info
+134      echo 12345678 > /tmp/d.log
+118      Host: 140.245.218.124:6379
+112      INFO
+107      echo 1 > /tmp/d.log
+92       echo password > /tmp/d.log
+91       echo root > /tmp/d.log
+87       echo qwe123!@ > /tmp/d.log
+84       Connection: close
 80       echo SHELL_TEST
-72       QUIT
-71       NONEXISTENT
-69       Connection: close
-68       flushall
+79       QUIT
+78       NONEXISTENT
+75       User-Agent: Go-http-client/1.1
+72       flushall
 67       echo 12345 > /tmp/d.log
-60       GET / HTTP/1.1
-60       User-Agent: Go-http-client/1.1
-58       echo gayan123 > /tmp/d.log
-58       echo admin123!@ > /tmp/d.log
-55       echo test > /tmp/d.log
-54       Accept: */*
-52       echo wso2 > /tmp/d.log
-52       echo tactical > /tmp/d.log
-51       echo admin123 > /tmp/d.log
-51       echo dspace > /tmp/d.log
-50       echo Admin@9000 > /tmp/d.log
-50       echo rock > /tmp/d.log
-50       echo ghost > /tmp/d.log
-50       echo gk123 > /tmp/d.log
-50       echo customer > /tmp/d.log
-50       echo default > /tmp/d.log
-49       Accept-Encoding: gzip
-49       echo qw > /tmp/d.log
-49       echo elrond > /tmp/d.log
-49       echo omm > /tmp/d.log
-49       echo gpadmin > /tmp/d.log
-49       echo codex > /tmp/d.log
-49       echo Rdf@2018 > /tmp/d.log
-49       echo palworld > /tmp/d.log
-48       echo sb > /tmp/d.log
-48       echo iksulata > /tmp/d.log
-48       echo term2 > /tmp/d.log
-48       echo parsa > /tmp/d.log
+63       GET / HTTP/1.1
+63       echo gayan123 > /tmp/d.log
+61       echo admin123!@ > /tmp/d.log
+57       Accept: */*
+57       echo Admin@9000 > /tmp/d.log
+57       echo wso2 > /tmp/d.log
+56       echo test > /tmp/d.log
+55       echo gpadmin > /tmp/d.log
+54       echo admin123 > /tmp/d.log
+54       echo qw > /tmp/d.log
+53       echo rock > /tmp/d.log
+53       echo dspace > /tmp/d.log
+53       echo centreon > /tmp/d.log
+53       echo tactical > /tmp/d.log
+52       Accept-Encoding: gzip
+52       echo ghost > /tmp/d.log
+52       echo sb > /tmp/d.log
+52       echo gk123 > /tmp/d.log
+52       echo omm > /tmp/d.log
+52       echo customer > /tmp/d.log
+52       echo csgo > /tmp/d.log
+52       echo codex > /tmp/d.log
+52       echo parsa > /tmp/d.log
+52       echo Asalem > /tmp/d.log
+52       echo palworld > /tmp/d.log
+51       echo gabriel > /tmp/d.log
+51       echo elrond > /tmp/d.log

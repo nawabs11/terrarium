@@ -15,7 +15,7 @@ Inspired by [ipsum](https://github.com/stamparm/ipsum).
 
 ## Live stats
 
-_Last updated: 2026-10-10 UTC · 4357 unique attacker IPs_
+_Last updated: 2026-10-11 UTC · 4567 unique attacker IPs_
 
 | # | Events | IP | Reverse DNS |
 |---|---|---|---|

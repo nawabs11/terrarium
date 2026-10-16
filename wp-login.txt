@@ -1,8 +1,8 @@
 # terrarium — wp-login.txt
 # IPs that hit wp-login.php / WordPress paths.
-# updated: 2026-10-15 (daily)
+# updated: 2026-10-16 (daily)
 # source: https://github.com/nawabs11/terrarium
-# entries: 51
+# entries: 52
 103.115.49.124
 103.140.55.158
 103.3.62.20
@@ -19,6 +19,7 @@
 140.245.97.206
 146.235.22.78
 147.224.153.167
+147.224.168.149
 147.224.196.190
 147.224.208.89
 151.243.11.240

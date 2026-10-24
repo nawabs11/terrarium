@@ -1,61 +1,64 @@
 # terrarium — top-ssh-commands.txt
 # Most-run SSH commands (generic only — nothing identifying the honeypot internals). Columns: runs command.
-# updated: 2026-10-23 (daily)
+# updated: 2026-10-24 (daily)
 # source: https://github.com/nawabs11/terrarium
 # entries: 100
 #
-119541   uname -s -v -n -r -m
-116127   uname -m | awk '{printf $1}'
-110639   uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
-110433   nproc
-107810   lspci | egrep VGA && lspci | grep 3D
-103452   lscpu | egrep "Model name:" | cut -d ' ' -f 14-
-101388   curl ipinfo.io/org
-101029   nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | wc -l | head -c 1
-99093    nvidia-smi -q | grep "Product Name"
-95467    uname -n | awk '{printf $1}'
-95287    lspci | egrep VGA | grep Radeon | wc -l | head -c 1
-93514    uname -r | awk '{printf $1}'
-8120     whoami
-8022     pwd
+123161   uname -s -v -n -r -m
+119646   uname -m | awk '{printf $1}'
+114034   uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
+113790   nproc
+111088   lspci | egrep VGA && lspci | grep 3D
+106634   lscpu | egrep "Model name:" | cut -d ' ' -f 14-
+104504   curl ipinfo.io/org
+104100   nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | wc -l | head -c 1
+102108   nvidia-smi -q | grep "Product Name"
+98379    uname -n | awk '{printf $1}'
+98223    lspci | egrep VGA | grep Radeon | wc -l | head -c 1
+96369    uname -r | awk '{printf $1}'
+12659    whoami
+12507    pwd
 7432     SCAN b'0' COUNT 2000
+7420     uname -a
+7401     hostname
+7330     ps aux | head -10
+7325     netstat -tulpn | head -10
+7312     history | tail -5
+7302     ls -la /
+7255     ssh -V
+7226     uptime
+7158     mount | head -5
+7126     env | head -10
 6731     echo xsec
-4803     uname -a
-4766     hostname
-4711     ps aux | head -10
-4691     history | tail -5
-4688     netstat -tulpn | head -10
-4672     ls -la /
-4663     ssh -V
-4647     uptime
-4596     mount | head -5
-4591     env | head -10
-4010     netstat -tulpn 2>/dev/null | grep LISTEN | head -20
-3939     ls -la /etc/network/interfaces /etc/sysconfig/network-scripts/ /etc/netplan/ 2>/dev/null | head -5
-3867     ip addr show 2>/dev/null | grep -E '^[0-9]+:' | head -5
-3790     ip route show 2>/dev/null | head -3
-3637     cat /etc/passwd 2>/dev/null | head -1
-3555     cat /etc/shadow 2>/dev/null | head -1
-3489     cat /proc/version 2>/dev/null | head -1
-3468     id
-3233     cat /proc/cpuinfo | grep 'model name' | head -1
-3191     uname -r
-3130     which apt
-3082     which yum
-3018     which pacman
-2948     which zypper
-2895     systemctl list-units --type=service --state=running 2>/dev/null | head -10
-2853     ping -c 1 8.8.8.8 2>/dev/null | grep '1 packets transmitted'
-2798     time dd if=/dev/zero of=/tmp/test bs=1M count=10 2>&1
-2750     rm -f /tmp/test
-2696     ss -tuln 2>/dev/null | wc -l
-2031     uname -m
-1909     /bin/./uname -s -v -n -r -m
-1861     uptime -p
-1817     lspci | grep VGA | cut -f5- -d ' '
+6224     netstat -tulpn 2>/dev/null | grep LISTEN | head -20
+6116     ls -la /etc/network/interfaces /etc/sysconfig/network-scripts/ /etc/netplan/ 2>/dev/null | head -5
+6009     ip addr show 2>/dev/null | grep -E '^[0-9]+:' | head -5
+5896     ip route show 2>/dev/null | head -3
+5668     cat /etc/passwd 2>/dev/null | head -1
+5551     cat /etc/shadow 2>/dev/null | head -1
+5445     cat /proc/version 2>/dev/null | head -1
+5397     id
+5065     cat /proc/cpuinfo | grep 'model name' | head -1
+5003     uname -r
+4917     which apt
+4846     which yum
+4749     which pacman
+4654     which zypper
+4570     systemctl list-units --type=service --state=running 2>/dev/null | head -10
+4511     ping -c 1 8.8.8.8 2>/dev/null | grep '1 packets transmitted'
+4428     time dd if=/dev/zero of=/tmp/test bs=1M count=10 2>&1
+4354     rm -f /tmp/test
+4278     ss -tuln 2>/dev/null | wc -l
+2160     /bin/./uname -s -v -n -r -m
+2100     uptime -p
+2062     uname -m
+2051     lspci | grep VGA | cut -f5- -d ' '
+1998     lspci | grep VGA -c
+1957     nvidia-smi -q | grep "Product Name" | head -n 1 | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}'
+1890     lspci | grep "3D controller" | cut -f5- -d ' '
+1853     nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | grep . -c
 1781     GET prod:aws:access_key
 1778     GET prod:stripe:webhook_secret
-1772     lspci | grep VGA -c
 1767     GET prod:stripe:sk_live
 1763     TYPE prod:aws:access_key
 1761     TYPE prod:stripe:webhook_secret
@@ -66,41 +69,38 @@
 1741     TYPE cache:session:index
 1739     TYPE prod:db:primary
 1738     TYPE prod:db:replica
-1737     nvidia-smi -q | grep "Product Name" | head -n 1 | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}'
 1708     GET __probe_db1__
 1708     TYPE __probe_db1__
-1680     lspci | grep "3D controller" | cut -f5- -d ' '
-1649     nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | grep . -c
-1257     cd ~; chattr -ia .ssh; lockr -ia .ssh
-1032     echo 123456 > /tmp/d.log
-366      PING
-353      echo 1234 > /tmp/d.log
-349      echo 123 > /tmp/d.log
-344      save
-239      info
-209      Host: 140.245.218.124:6379
-194      INFO
-189      echo 12345678 > /tmp/d.log
-160      echo 1 > /tmp/d.log
-153      echo root > /tmp/d.log
-150      Connection: close
+1345     cd ~; chattr -ia .ssh; lockr -ia .ssh
+1103     echo 123456 > /tmp/d.log
+384      PING
+378      echo 123 > /tmp/d.log
+374      echo 1234 > /tmp/d.log
+354      save
+246      info
+212      Host: 140.245.218.124:6379
+205      echo 12345678 > /tmp/d.log
+199      INFO
+174      echo 1 > /tmp/d.log
+163      echo root > /tmp/d.log
+152      Connection: close
 148      DBSIZE
-136      QUIT
-135      NONEXISTENT
+140      QUIT
+139      NONEXISTENT
 135      User-Agent: Go-http-client/1.1
-127      echo qwe123!@ > /tmp/d.log
-122      flushall
-122      echo password > /tmp/d.log
-102      GET / HTTP/1.1
+135      echo qwe123!@ > /tmp/d.log
+127      echo password > /tmp/d.log
+126      flushall
+107      GET / HTTP/1.1
+105      echo admin123!@ > /tmp/d.log
+101      Accept: */*
+101      echo 12345 > /tmp/d.log
 100      echo SHELL_TEST
-99       echo admin123!@ > /tmp/d.log
-95       Accept: */*
-94       echo 12345 > /tmp/d.log
-91       echo admin123 > /tmp/d.log
-90       echo gayan123 > /tmp/d.log
-89       echo centreon > /tmp/d.log
-88       echo ghost > /tmp/d.log
-85       echo 1234567890 > /tmp/d.log
-84       echo dspace > /tmp/d.log
-83       echo kali > /tmp/d.log
-83       echo parsa > /tmp/d.log
+97       echo admin123 > /tmp/d.log
+92       echo ghost > /tmp/d.log
+92       echo centreon > /tmp/d.log
+92       echo gayan123 > /tmp/d.log
+91       echo 1234567890 > /tmp/d.log
+87       echo dspace > /tmp/d.log
+86       echo kali > /tmp/d.log
+86       echo parsa > /tmp/d.log

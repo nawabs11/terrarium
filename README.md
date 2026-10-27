@@ -15,11 +15,11 @@ Inspired by [ipsum](https://github.com/stamparm/ipsum).
 
 ## Live stats
 
-_Last updated: 2026-10-26 UTC · 9215 unique attacker IPs_
+_Last updated: 2026-10-27 UTC · 9562 unique attacker IPs_
 
 | # | Events | IP | Reverse DNS |
 |---|---|---|---|
-| 1 | 393673 | `103.216.94.86` | - |
+| 1 | 434580 | `103.216.94.86` | - |
 | 2 | 263159 | `138.68.61.2` | - |
 | 3 | 101722 | `109.160.32.110` | - |
 | 4 | 95765 | `109.160.32.149` | - |

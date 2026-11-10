@@ -6,22 +6,22 @@ Updated daily from the deception grid.
 
 | Metric | Count |
 |---|---|
-| Unique attacker IPs | 13955 |
-| SSH brute-forcers | 6590 |
-| HTTP probers | 6475 |
-| Jenkins probers | 2171 |
+| Unique attacker IPs | 14224 |
+| SSH brute-forcers | 6686 |
+| HTTP probers | 6637 |
+| Jenkins probers | 2216 |
 
 ## Top origin countries (by events)
 
 | Country | Events |
 |---|---|
-| NL | 2844071 |
-| US | 2471360 |
-| IN | 1050596 |
-| FR | 614988 |
-| AD | 147098 |
-| CA | 122959 |
-| HK | 93141 |
+| NL | 2950162 |
+| US | 2543821 |
+| IN | 1060714 |
+| FR | 641110 |
+| AD | 159246 |
+| CA | 122968 |
+| HK | 93949 |
 | PE | 85808 |
 
-_Last updated: 2026-11-09 UTC_
+_Last updated: 2026-11-10 UTC_

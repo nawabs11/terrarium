@@ -1,53 +1,53 @@
 # terrarium — top-ssh-commands.txt
 # Most-run SSH commands (generic only — nothing identifying the honeypot internals). Columns: runs command.
-# updated: 2026-11-10 (daily)
+# updated: 2026-11-11 (daily)
 # source: https://github.com/nawabs11/terrarium
 # entries: 100
 #
-182582   uname -s -v -n -r -m
-177228   uname -m | awk '{printf $1}'
-169219   uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
-168662   nproc
-164390   lspci | egrep VGA && lspci | grep 3D
-157599   lscpu | egrep "Model name:" | cut -d ' ' -f 14-
-154301   curl ipinfo.io/org
-153428   nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | wc -l | head -c 1
-150437   nvidia-smi -q | grep "Product Name"
-144587   uname -n | awk '{printf $1}'
-144583   lspci | egrep VGA | grep Radeon | wc -l | head -c 1
-141416   uname -r | awk '{printf $1}'
-36225    whoami
-35762    pwd
-20953    uname -a
-20940    hostname
-20730    ps aux | head -10
-20688    history | tail -5
-20683    netstat -tulpn | head -10
-20665    ls -la /
-20609    ssh -V
-20544    uptime
-20391    mount | head -5
-20248    env | head -10
-17815    netstat -tulpn 2>/dev/null | grep LISTEN | head -20
-17501    ls -la /etc/network/interfaces /etc/sysconfig/network-scripts/ /etc/netplan/ 2>/dev/null | head -5
-17218    ip addr show 2>/dev/null | grep -E '^[0-9]+:' | head -5
-16941    ip route show 2>/dev/null | head -3
-16347    cat /etc/passwd 2>/dev/null | head -1
-16067    cat /etc/shadow 2>/dev/null | head -1
-15773    cat /proc/version 2>/dev/null | head -1
-15609    id
-14685    cat /proc/cpuinfo | grep 'model name' | head -1
-14455    uname -r
-14216    which apt
-13991    which yum
-13736    which pacman
-13487    which zypper
-13256    systemctl list-units --type=service --state=running 2>/dev/null | head -10
-13077    ping -c 1 8.8.8.8 2>/dev/null | grep '1 packets transmitted'
-12858    time dd if=/dev/zero of=/tmp/test bs=1M count=10 2>&1
-12668    rm -f /tmp/test
-12466    ss -tuln 2>/dev/null | wc -l
-12109    echo xsec
+187727   uname -s -v -n -r -m
+182230   uname -m | awk '{printf $1}'
+174098   uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
+173427   nproc
+169026   lspci | egrep VGA && lspci | grep 3D
+162123   lscpu | egrep "Model name:" | cut -d ' ' -f 14-
+158745   curl ipinfo.io/org
+157771   nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | wc -l | head -c 1
+154682   nvidia-smi -q | grep "Product Name"
+148736   lspci | egrep VGA | grep Radeon | wc -l | head -c 1
+148647   uname -n | awk '{printf $1}'
+145393   uname -r | awk '{printf $1}'
+36285    whoami
+35821    pwd
+20989    uname -a
+20972    hostname
+20763    ps aux | head -10
+20721    history | tail -5
+20716    netstat -tulpn | head -10
+20698    ls -la /
+20640    ssh -V
+20577    uptime
+20421    mount | head -5
+20279    env | head -10
+17843    netstat -tulpn 2>/dev/null | grep LISTEN | head -20
+17529    ls -la /etc/network/interfaces /etc/sysconfig/network-scripts/ /etc/netplan/ 2>/dev/null | head -5
+17246    ip addr show 2>/dev/null | grep -E '^[0-9]+:' | head -5
+16969    ip route show 2>/dev/null | head -3
+16374    cat /etc/passwd 2>/dev/null | head -1
+16094    cat /etc/shadow 2>/dev/null | head -1
+15800    cat /proc/version 2>/dev/null | head -1
+15635    id
+14709    cat /proc/cpuinfo | grep 'model name' | head -1
+14479    uname -r
+14239    which apt
+14013    which yum
+13757    which pacman
+13508    which zypper
+13277    systemctl list-units --type=service --state=running 2>/dev/null | head -10
+13098    ping -c 1 8.8.8.8 2>/dev/null | grep '1 packets transmitted'
+12878    echo xsec
+12878    time dd if=/dev/zero of=/tmp/test bs=1M count=10 2>&1
+12687    rm -f /tmp/test
+12484    ss -tuln 2>/dev/null | wc -l
 9629     echo -e "\x6F\x6B"
 7432     SCAN b'0' COUNT 2000
 3533     /bin/./uname -s -v -n -r -m
@@ -56,10 +56,10 @@
 3276     lspci | grep VGA -c
 3202     nvidia-smi -q | grep "Product Name" | head -n 1 | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}'
 3086     lspci | grep "3D controller" | cut -f5- -d ' '
-3029     uname -m
+3030     uname -m
 3018     nvidia-smi -q | grep "Product Name" | awk '{print $4, $5, $6, $7, $8, $9, $10, $11}' | grep . -c
-2776     cd ~; chattr -ia .ssh; lockr -ia .ssh
-2235     echo 123456 > /tmp/d.log
+2793     cd ~; chattr -ia .ssh; lockr -ia .ssh
+2293     echo 123456 > /tmp/d.log
 1796     GET prod:aws:access_key
 1793     GET prod:stripe:webhook_secret
 1782     GET prod:stripe:sk_live
@@ -74,33 +74,33 @@
 1745     TYPE prod:db:replica
 1708     GET __probe_db1__
 1708     TYPE __probe_db1__
-1088     PING
+1263     PING
 845      echo 123 > /tmp/d.log
-711      echo 1234 > /tmp/d.log
-564      INFO server
-466      INFO memory
-456      save
-397      FLUSHALL
+716      INFO server
+715      echo 1234 > /tmp/d.log
+617      INFO memory
+517      FLUSHALL
+469      save
 397      echo 12345678 > /tmp/d.log
-379      echo root > /tmp/d.log
-352      Host: 140.245.218.124:6379
-346      info
-335      echo 1 > /tmp/d.log
-324      INFO
-275      Connection: close
+386      echo root > /tmp/d.log
+356      Host: 140.245.218.124:6379
+354      info
+341      echo 1 > /tmp/d.log
+330      INFO
+279      Connection: close
+253      CONFIG SET stop-writes-on-bgsave-error no
 246      echo qwe123!@ > /tmp/d.log
-229      QUIT
-227      NONEXISTENT
+232      QUIT
+230      NONEXISTENT
 225      User-Agent: Go-http-client/1.1
 221      echo password > /tmp/d.log
-182      echo 12345 > /tmp/d.log
+189      echo 12345 > /tmp/d.log
+183      Accept: */*
 181      echo admin123 > /tmp/d.log
-176      Accept: */*
 176      echo admin123!@ > /tmp/d.log
 173      DBSIZE
-164      flushall
+168      flushall
+160      GET / HTTP/1.1
 159      echo hamid > /tmp/d.log
 158      echo P@ssw0rd > /tmp/d.log
 158      echo gix > /tmp/d.log
-157      GET / HTTP/1.1
-153      echo 1234567890 > /tmp/d.log
